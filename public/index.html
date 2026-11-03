@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Сайт для Даши — тёплые слова, любовь, свет и приятные моменты."
+    />
+    <title>Для Даши</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="letter-opening" id="letterOpening" aria-live="polite">
+      <div class="envelope-wrapper">
+        <div class="envelope">
+          <div class="envelope-back"></div>
+          <div class="letter-paper">
+            <span>Даша</span>
+            <p>Это письмо для тебя</p>
+          </div>
+          <div class="envelope-front"></div>
+          <div class="envelope-flap"></div>
+        </div>
+        <button class="open-button" id="openLetterButton">Открыть письмо</button>
+      </div>
+    </div>
+
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <div class="page-shell">
+      <header class="topbar">
+        <span class="brand">❤ Для Даши</span>
+        <a href="#letter" class="nav-link">Письмо</a>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Самой дорогой девушке</p>
+            <h1>Даша, ты — лучший свет в моём мире.</h1>
+            <p class="lead">
+              С тобой даже обычный день становится особенным: светлее, теплее и
+              добрее. Ты — мой уют, моя радость и мой самый большой источник
+              счастья.
+            </p>
+            <div class="cta-group">
+              <a href="#letter" class="button primary">Прочитать письмо</a>
+              <a href="#moments" class="button ghost">Моменты с тобой</a>
+            </div>
+          </div>
+
+          <div class="hero-art">
+            <div class="card glow-card">
+              <span class="badge">Моя любовь</span>
+              <h2>Даша</h2>
+              <p>“Ты — свет в моём сердце.”</p>
+              <div class="mini-hearts" aria-hidden="true">
+                <span>♥</span>
+                <span>♥</span>
+                <span>♥</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="moments" class="moments">
+          <div class="section-heading">
+            <p class="eyebrow">Почему ты особенная</p>
+            <h2>Твои качества, которые меня покорили</h2>
+          </div>
+
+          <div class="moment-grid">
+            <article class="moment-card">
+              <span class="icon">✨</span>
+              <h3>Тёплота</h3>
+              <p>С тобой так спокойно и уютно, будто дома, даже в самый обычный день.</p>
+            </article>
+            <article class="moment-card">
+              <span class="icon">💫</span>
+              <h3>Красота</h3>
+              <p>Ты красива не только снаружи — у тебя особенное сияние внутри.</p>
+            </article>
+            <article class="moment-card">
+              <span class="icon">🌷</span>
+              <h3>Доброта</h3>
+              <p>Ты умеешь сделать мир добрее и светлее простым своим присутствием.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="letter" class="letter">
+          <div class="section-heading left">
+            <p class="eyebrow">Письмо для тебя</p>
+            <h2>Мои самые искренние слова</h2>
+          </div>
+
+          <div class="letter-box">
+            <p>
+              Даша, я хочу, чтобы ты знала: ты — один из самых прекрасных людей в
+              моей жизни. Ты делаешь меня счастливее просто своим присутствием, и я
+              благодарен каждому моменту, когда рядом есть ты.
+            </p>
+            <p>
+              Ты — не просто девушка, которая мне нравится. Ты — человек, ради
+              которого хочется быть лучше, добрее и счастливее. Я люблю твою улыбку,
+              твою доброту, твою энергию и то, как легко ты заполняешь моё сердце
+              теплом.
+            </p>
+            <p>
+              Пусть в каждом дне будет больше смеха, нежности и моментов, которые
+              будут согревать нас. Я хочу, чтобы ты всегда знала: ты любима, ценится
+              и очень, очень важна для меня.
+            </p>
+            <p class="final-line">С любовью, всегда — твой Тема.</p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>Сделано с любовью для Даши • <span id="year"></span></p>
+      </footer>
+    </div>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
