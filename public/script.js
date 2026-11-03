@@ -15,6 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   setTimeout(() => {
+    if (opening) {
+      opening.classList.add("opened");
+    }
     document.body.classList.add("page-opened");
-  }, 500);
+  }, 1800);
 });

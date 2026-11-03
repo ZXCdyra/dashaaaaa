@@ -5,6 +5,7 @@
   --card-strong: rgba(255, 255, 255, 0.88);
   --primary: #d95b8f;
   --primary-dark: #b63e73;
+  --secondary: #f7c2d8;
   --accent: #ffd5e5;
   --text: #2f1e2d;
   --muted: #5d425e;
@@ -29,9 +30,59 @@ body {
   overflow-x: hidden;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(255,255,255,0.85), transparent 45%);
+  pointer-events: none;
+  z-index: 0;
+}
+
 img {
   max-width: 100%;
   display: block;
+}
+
+.heart-rain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.heart-rain span {
+  position: absolute;
+  left: var(--left);
+  top: -10%;
+  color: rgba(217, 91, 143, 0.28);
+  font-size: clamp(1.1rem, 2vw, 2rem);
+  animation: fall 11s linear infinite;
+  opacity: 0.8;
+}
+
+.heart-rain span:nth-child(1) { --left: 8%; animation-delay: 0s; }
+.heart-rain span:nth-child(2) { --left: 18%; animation-delay: 2s; }
+.heart-rain span:nth-child(3) { --left: 31%; animation-delay: 1s; }
+.heart-rain span:nth-child(4) { --left: 47%; animation-delay: 3s; }
+.heart-rain span:nth-child(5) { --left: 62%; animation-delay: 2.6s; }
+.heart-rain span:nth-child(6) { --left: 74%; animation-delay: 0.7s; }
+.heart-rain span:nth-child(7) { --left: 86%; animation-delay: 1.7s; }
+.heart-rain span:nth-child(8) { --left: 94%; animation-delay: 3.6s; }
+
+@keyframes fall {
+  0% {
+    transform: translate3d(0, -10%, 0) scale(0.7) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(18px, 110vh, 0) scale(1.2) rotate(18deg);
+    opacity: 0;
+  }
 }
 
 .background-glow {
@@ -375,6 +426,203 @@ body.page-opened .page-shell {
   animation: pulse 1.6s ease-in-out infinite;
 }
 
+.story-showcase {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.story-card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(217, 91, 143, 0.12);
+  border-radius: 28px;
+  box-shadow: 0 18px 46px rgba(148, 81, 112, 0.08);
+  padding: 1.6rem;
+}
+
+.story-card.large {
+  background: linear-gradient(135deg, rgba(255, 249, 252, 0.9), rgba(255, 235, 244, 0.8));
+}
+
+.story-card blockquote {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.5rem, 2vw, 2.3rem);
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.story-card h3 {
+  margin: 0.6rem 0 0.4rem;
+  font-size: 1.4rem;
+}
+
+.story-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.story-number {
+  display: inline-block;
+  color: var(--primary-dark);
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+}
+
+.love-details {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.detail-card {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(217, 91, 143, 0.12);
+  border-radius: 28px;
+  padding: 1.5rem;
+  box-shadow: 0 18px 40px rgba(148, 81, 112, 0.08);
+}
+
+.detail-card.wide {
+  background: linear-gradient(135deg, rgba(255, 243, 247, 0.96), rgba(255, 230, 240, 0.8));
+}
+
+.detail-card h3 {
+  margin: 0.5rem 0 0.7rem;
+  font-size: clamp(1.5rem, 2vw, 2.1rem);
+  line-height: 1.2;
+}
+
+.detail-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.detail-tag {
+  display: inline-flex;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 213, 229, 0.8);
+  color: var(--primary-dark);
+  font-size: 0.73rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.little-things {
+  display: grid;
+  grid-template-columns: 1.1fr 1.2fr;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.tiny-quote,
+.checklist {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(217, 91, 143, 0.12);
+  border-radius: 30px;
+  box-shadow: 0 20px 45px rgba(148, 81, 112, 0.08);
+}
+
+.tiny-quote {
+  background: linear-gradient(135deg, rgba(255, 245, 250, 0.95), rgba(255, 230, 239, 0.8));
+  padding: 1.7rem;
+}
+
+.tiny-quote h3 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.7rem, 2.4vw, 2.5rem);
+  line-height: 1.3;
+  color: var(--text);
+}
+
+.checklist {
+  padding: 1.2rem 1.1rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.9rem 1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.64);
+  color: var(--text);
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.check-item span {
+  display: inline-flex;
+  width: 1.8rem;
+  height: 1.8rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), #f0a9c6);
+  color: #fff;
+  font-size: 0.88rem;
+  box-shadow: 0 10px 22px rgba(217, 91, 143, 0.22);
+}
+
+.timeline {
+  margin-top: 2rem;
+}
+
+.timeline-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: start;
+  padding: 1.2rem 1.2rem 1.2rem 0.9rem;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(217, 91, 143, 0.12);
+  border-radius: 24px;
+  box-shadow: 0 18px 38px rgba(148, 81, 112, 0.07);
+}
+
+.timeline-item:nth-child(even) {
+  margin-left: 2.5rem;
+}
+
+.time-dot {
+  display: inline-flex;
+  width: 2.7rem;
+  height: 2.7rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-dark), #f3a7c7);
+  box-shadow: 0 18px 30px rgba(182, 62, 115, 0.24);
+  color: #fff;
+  font-weight: 700;
+}
+
+.timeline-item h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1.3rem;
+}
+
+.timeline-item p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
 @keyframes pulse {
   0%, 100% { transform: scale(1); opacity: 1; }
   50% { transform: scale(1.12); opacity: 0.8; }
@@ -461,13 +709,23 @@ body.page-opened .page-shell {
 }
 
 @media (max-width: 860px) {
-  .hero {
+  .hero,
+  .story-showcase,
+  .love-details,
+  .little-things {
     grid-template-columns: 1fr;
+  }
+
+  .hero {
     padding-top: 2.5rem;
   }
 
   .moment-grid {
     grid-template-columns: 1fr;
+  }
+
+  .timeline-item:nth-child(even) {
+    margin-left: 0;
   }
 }
 
