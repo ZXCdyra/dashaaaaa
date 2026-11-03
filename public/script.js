@@ -3,32 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const opening = document.getElementById("letterOpening");
   const openButton = document.getElementById("openLetterButton");
 
-  const replaceAllVisibleTextWithQuestion = () => {
-    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
-      acceptNode(node) {
-        const parent = node.parentElement;
-        if (!parent || parent.tagName === "SCRIPT" || parent.tagName === "STYLE") {
-          return NodeFilter.FILTER_REJECT;
-        }
-        return NodeFilter.FILTER_ACCEPT;
-      },
-    });
-
-    const nodes = [];
-    let currentNode = walker.nextNode();
-    while (currentNode) {
-      nodes.push(currentNode);
-      currentNode = walker.nextNode();
-    }
-
-    nodes.forEach((node) => {
-      const trimmed = node.textContent.trim();
-      if (trimmed && trimmed !== "?") {
-        node.textContent = "?";
-      }
-    });
-  };
-
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
@@ -71,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
       for (let i = 0; i < 12; i += 1) {
         const heart = document.createElement("span");
         heart.className = "floating-heart";
-        heart.textContent = "?";
+        heart.textContent = "❤";
 
         const rect = loveHeartButton.getBoundingClientRect();
         heart.style.left = `${rect.left + rect.width / 2}px`;
@@ -90,8 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 220);
     });
   }
-
-  replaceAllVisibleTextWithQuestion();
 
   setTimeout(() => {
     if (opening) {
