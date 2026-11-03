@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Для Даши</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body class="secondary-page">
+    <div class="heart-rain" aria-hidden="true">
+      <span>♥</span>
+      <span>♥</span>
+      <span>♥</span>
+      <span>♥</span>
+      <span>♥</span>
+      <span>♥</span>
+      <span>♥</span>
+      <span>♥</span>
+    </div>
+
+    <div class="page-shell secondary-shell">
+      <header class="topbar secondary-topbar">
+        <span class="brand">❤ Для Даши</span>
+        <a href="/" class="nav-link">На главную</a>
+      </header>
+
+      <main class="secondary-main">
+        <section class="secondary-hero">
+          <div class="secondary-copy">
+            <p class="eyebrow">Моя самая дорогая девочка</p>
+            <h1>Даша, ты для меня — весь свет, весь покой и главное счастье.</h1>
+            <p class="lead">
+              Ты — тот человек, который делает жизнь мягче и красивее. В твоём присутствии
+              становится легче дышать, спокойнее думать и счастливее улыбаться. Я ценю тебя
+              не только за твою красоту, но и за то, как ты умеешь согревать сердце.
+            </p>
+          </div>
+
+          <div class="portrait-card">
+            <div class="portrait-glow"></div>
+            <div class="portrait-inner">
+              <span class="badge">Мой любимый человек</span>
+              <h2>Даша</h2>
+              <p>Ты — мой самый светлый день, самый тёплый вечер и самое дорогое счастье.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="memory-grid">
+          <article class="gift-card highlight">
+            <span class="story-number">01</span>
+            <h3>Ты — моё вдохновение</h3>
+            <p>С тобой хочется становиться лучше, заботиться глубже и любить искренне.</p>
+          </article>
+
+          <article class="gift-card">
+            <span class="story-number">02</span>
+            <h3>Ты — моё спокойствие</h3>
+            <p>Когда рядом ты, становится легче, уютнее и светлее даже в самые обычные дни.</p>
+          </article>
+
+          <article class="gift-card">
+            <span class="story-number">03</span>
+            <h3>Ты — моё счастье</h3>
+            <p>Я люблю тебя за твоё тепло, честность, нежность и ту доброту, которую ты даришь.</p>
+          </article>
+        </section>
+
+        <section class="big-message">
+          <p class="eyebrow">Потому что ты особенная</p>
+          <blockquote>
+            “Мне нравится всё в тебе: твой голос, твоя улыбка, твой взгляд, твоё тепло
+            и то, как легко рядом с тобой становится счастливым. Я люблю тебя не за идеалы,
+            а за тебя — настоящую, дорогую, особенную. Ты — самое прекрасное, что есть в моей жизни.”
+          </blockquote>
+        </section>
+
+        <section class="closing-block">
+          <div class="closing-inner">
+            <p class="eyebrow">Именно поэтому</p>
+            <h2>Я хочу, чтобы ты знала: ты всегда будешь самым дорогим светом в моей жизни.</h2>
+            <p>
+              Я хочу дарить тебе заботу, тепло, улыбки и такие моменты, в которых ты будешь
+              чувствовать себя любимой, счастливой и по-настоящему важной. Ты заслуживаешь всё лучшее,
+              и я хочу быть частью этого прекрасного мира для тебя.
+            </p>
+            <div class="final-signature">С любовью, твой Тема ❤</div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>Сделано с любовью для Даши • <span id="year"></span></p>
+      </footer>
+    </div>
+
+    <script src="/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const yearEl = document.getElementById("year");
+        if (yearEl) {
+          yearEl.textContent = new Date().getFullYear();
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -14,6 +14,57 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const tabButtons = document.querySelectorAll(".tab-button");
+  const panels = document.querySelectorAll(".tab-panel");
+  const loveHeartButton = document.querySelector(".love-heart-button");
+
+  tabButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const targetId = button.dataset.tab;
+
+      tabButtons.forEach((btn) => {
+        const isActive = btn === button;
+        btn.classList.toggle("active", isActive);
+        btn.setAttribute("aria-selected", String(isActive));
+      });
+
+      panels.forEach((panel) => {
+        const isActive = panel.id === targetId;
+        panel.classList.toggle("active", isActive);
+        panel.hidden = !isActive;
+      });
+    });
+  });
+
+  if (loveHeartButton) {
+    loveHeartButton.addEventListener("click", (event) => {
+      event.preventDefault();
+      loveHeartButton.classList.add("is-popped");
+      setTimeout(() => loveHeartButton.classList.remove("is-popped"), 360);
+
+      for (let i = 0; i < 12; i += 1) {
+        const heart = document.createElement("span");
+        heart.className = "floating-heart";
+        heart.textContent = "❤";
+
+        const rect = loveHeartButton.getBoundingClientRect();
+        heart.style.left = `${rect.left + rect.width / 2}px`;
+        heart.style.top = `${rect.top + rect.height / 2}px`;
+        heart.style.setProperty("--dx", `${(Math.random() - 0.5) * 170}px`);
+        heart.style.setProperty("--dy", `${-40 - Math.random() * 120}px`);
+        heart.style.setProperty("--rot", `${(Math.random() - 0.5) * 45}deg`);
+        heart.style.fontSize = `${0.9 + Math.random() * 1.3}rem`;
+
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 1200);
+      }
+
+      setTimeout(() => {
+        window.location.href = loveHeartButton.getAttribute("href");
+      }, 220);
+    });
+  }
+
   setTimeout(() => {
     if (opening) {
       opening.classList.add("opened");
